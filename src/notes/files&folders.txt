@@ -1,0 +1,52 @@
+1. tslint.json : Will help us to follow best practices of typescript.
+2. tsconfig.json : Typescript configuration file.
+3. protractor.conf.js: The configuration file for end to end test cases.
+4. package.json: 
+    dependencies: The libraries which we will be using for coding in our app, and has to be taken to deployment.
+    devDependencies:  The libraries which are not required on production like jasmine or UnitTesting.
+5. karma.conf.js: This is configuration file for our unit test cases.
+other framework for UT: https://mochajs.org/
+6. angular-cli.json: 
+
+Src:
+1. typings.d.ts: Type definition file for node.
+2. tsconfig.spec.json :  this is typescript configuration file for Unit Test cases.
+3. tsconfig.app.json :  this is typescript configuration file for componets/directives/pipes/services.
+4. test.ts: This file is required by karma.conf.js and loads recursively all the .spec and framework files
+5. styles.css : Global styles to be added here.
+6. polyfills.ts : Pollyfills will help us to avoid the browser compatibility issue.
+7. main.ts: This is entry class for our angular app.
+8. index.html: This is our master page.
+
+
+AppModule: 
+
+@NgModule: This is a decorator. This will tell angualr compiler that this class
+is not a normal class this is a Angular Module.
+
+Angular Module: 
+
+declarations: Whenever we create a new component/directives/pipes it should be registered
+by using declarations property.
+
+imports: Is to register any third party library.
+BrowserModule: this will help us to run our app on browser.
+
+providers: It will be used to register a service.
+
+bootstrap: This property is only available with root module. It defined our entry component.
+
+Component:
+
+Component is somthing which will have its metadata and view.
+
+@Component: It willtell angualr comiler that this class is component.
+
+Components are Custom HTML tag, which will help us to re-use the HTML.
+
+properties:
+selector: this is our htlm tag.
+templateUrl:  this is your html view.
+template: To give inline html.
+styleUrls: we can provide the css to be used by our component.
+styles: inline styles.

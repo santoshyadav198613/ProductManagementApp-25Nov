@@ -1,0 +1,16 @@
+How to create a component:
+1. ng g c <component_name>
+
+Binding:
+1. interpolation: we can use {{<var>}} to display our data.
+2. Property Binding: we use [] "box" syntax.
+3. Event Binding: use () "banana" syntax for event binding.
+
+Built-in Directices:
+1. *ngIf :  this is a structured directive which removes the element from DOM.
+2. *ngFor: To bind the array object we can use ngFor.
+3. ngSwitch: Similar to switch case
+4. ngClass: To provide the classes at runtime based on some action.
+
+Component Interaction:
+Component Lifecycle:

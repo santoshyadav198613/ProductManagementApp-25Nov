@@ -1,0 +1,17 @@
+1. It is a framework built by google for UI.
+2. Not a library
+
+Diff:
+1. framework gives you flexibility to use other library.
+2. 
+
+Features:
+1. Cross platforms apps.
+a. Angular Universal
+b. Ionic
+c. electron
+
+2. Seperation of concern
+3. Several design patterns can be used.
+4. Testing
+5. SPA
