@@ -28,4 +28,15 @@ How:
 
 
 Component Lifecycle:
-1. 
+1. constructor: no code to be wrtitte here, only used for DI.
+2. ngOnInit : First event to be called after constructor, best place to write 
+some code to load data from backend.
+3. ngOnChanges:  works only with classes having input properties, is useful in 
+case we want to log previous and current value for our input properties.
+4. ngDoCheck: This event is called after init and after any event is triggered.
+Very useful for scenarios like auot complete. Should not be implemented with OnChnages.
+5. ngAfterViewInit: If in case we want to access poperties or functionsof ViewChildrent component
+right after view is initalised, this is the evevnt.
+6. ngOnDestroy:  This is the last event in lifecycle, use this to freup resources,
+also to handle some scenarios where want to show user some message when user is moving
+away fro one component to another.

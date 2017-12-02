@@ -1,12 +1,16 @@
-import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
+import {
+  Component, OnInit, ViewChild, ElementRef,
+  ViewChildren, QueryList, DoCheck, AfterViewInit
+} from '@angular/core';
 import { Product } from './product';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, DoCheck, AfterViewInit {
   productName: string = '32inch LED TV';
   isVisible: boolean = false;
   productList: Product[] = [
@@ -24,17 +28,26 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  toggle() {
+    console.log(this.prodChildrenComp);
     this.div.nativeElement.innerText = 'This data is assigned from ViewChild';
     this.prodDetailsComponent.productName = 'LED TV';
     this.prodDetailsComponent.sendAlert();
-    this.isVisible = !this.isVisible;
+  }
 
+  ngDoCheck(): void {
+    console.log('This is do check evevnt');
+  }
+
+  toggle() {
+    this.isVisible = !this.isVisible;
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.prodChildrenComp);
     this.prodChildrenComp.forEach(function (child) {
-      child.productName = 'HD TV';
-      child.sendAlert();
+      setTimeout(() => child.productName = 'HD TV', 0);
+      // child.productName = 'HD TV';
+      // child.sendAlert();
     });
   }
 
