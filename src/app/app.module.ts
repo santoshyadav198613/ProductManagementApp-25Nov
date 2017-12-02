@@ -7,6 +7,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 
+import { ProductService } from './service/product/product.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ProductDetailsComponent } from './product/product-details/product-detai
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ { provide : ProductService , useClass: ProductService } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

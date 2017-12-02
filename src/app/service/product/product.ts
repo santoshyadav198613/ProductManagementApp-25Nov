@@ -1,5 +1,5 @@
-export class Product{
-    id:number;
+export class Product {
+    id: number;
     name: string;
     price: number;
     mfd: Date;

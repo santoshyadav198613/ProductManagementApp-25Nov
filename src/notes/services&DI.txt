@@ -1,0 +1,30 @@
+Services:
+1. Resusable code
+2. We achieve loosely coupled system.
+3. Seperates business logic.
+4. Interact with API.
+
+How:
+1. ng g service <service_name>
+2. Registering a service in AppModule will make it accessble to entire app.
+3.It also makes it Singleton
+4. In case we don't want service to be accssible by other components, register in component itlsef.
+5. In case we don't want to use Singleton instance, we can override by registering with component.
+
+
+DI:
+It is most widely used design pattern.
+never create an instance of class directly into your own class.
+Always inject your class in constructor.    
+
+
+Singleton:
+One instance of a class will be available.
+
+Types of services:
+
+Class based service:
+
+Non-Class based service:
+1. Value Provider
+3. Factory -- To be discussed during routing

@@ -2,7 +2,7 @@ import {
   Component, OnInit, Input, Output,
   EventEmitter, OnChanges, SimpleChanges, OnDestroy
 } from '@angular/core';
-import { Product } from '../product';
+import { Product } from '../../service/product/product';
 
 @Component({
   selector: 'app-product-list',

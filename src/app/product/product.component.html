@@ -10,8 +10,7 @@
 </div>
 
 <div *ngIf="isVisible" [innerText]="productName">
-    <app-product-list [products]="productList" (message)="receiveFromChild($event)"></app-product-list>
-</div>
+ </div>
 
 
 <div #maindiv>
@@ -20,6 +19,7 @@
 
 <button type="button" (click)="toggle()">Toggle</button>
 
+<app-product-list [products]="productList" (message)="receiveFromChild($event)"></app-product-list>
 
 
 <div [ngSwitch]="userRole">
