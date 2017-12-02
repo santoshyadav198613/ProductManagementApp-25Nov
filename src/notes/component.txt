@@ -21,10 +21,11 @@ How:
     a. Input() : To Pass data from parent to child component, we need to use @Input() decorator.
     b. Output(): To receive data from child to parent.
 2. Typscript:
-    a.  ViewChild() :  This will be used when we want direct control over our child component.
-    
-3. Service
+    a. ViewChild() :  This will be used when we want direct control over our child component.
+    b. ViewChildren(): To access multiple compoents of same type.
+3. Service :
 
 
 
 Component Lifecycle:
+1. 

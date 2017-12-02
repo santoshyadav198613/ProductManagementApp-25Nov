@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild ,ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { Product } from './product';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 @Component({
@@ -18,6 +18,8 @@ export class ProductComponent implements OnInit {
   @ViewChild(ProductDetailsComponent) prodDetailsComponent: ProductDetailsComponent;
 
   @ViewChild('maindiv') div: ElementRef;
+
+  @ViewChildren(ProductDetailsComponent) prodChildrenComp: QueryList<ProductDetailsComponent>;
   userRole: string = 'Super Admin';
   constructor() { }
 
@@ -29,6 +31,11 @@ export class ProductComponent implements OnInit {
     this.prodDetailsComponent.productName = 'LED TV';
     this.prodDetailsComponent.sendAlert();
     this.isVisible = !this.isVisible;
+
+    this.prodChildrenComp.forEach(function (child) {
+      child.productName = 'HD TV';
+      child.sendAlert();
+    });
   }
 
   receiveFromChild(message: string) {
