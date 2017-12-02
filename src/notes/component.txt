@@ -13,4 +13,17 @@ Built-in Directices:
 4. ngClass: To provide the classes at runtime based on some action.
 
 Component Interaction:
+
+What: The way to pass data to and from between different component.
+
+How:
+1. HTML
+    a. Input() : To Pass data from parent to child component, we need to use @Input() decorator.
+    b. Output(): To receive data from child to parent.
+2. Typscript:
+
+3. Service
+
+
+
 Component Lifecycle:

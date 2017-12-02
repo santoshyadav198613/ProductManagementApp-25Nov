@@ -9,46 +9,12 @@
 
 </div>
 
-<div  *ngIf="isVisible" [innerText]="productName">
+<div *ngIf="isVisible" [innerText]="productName">
 
 </div>
 
 <button type="button" (click)="toggle()">Toggle</button>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>
-        ID
-      </th>
-      <th>
-        Name
-      </th>
-      <th>
-        Price
-      </th>
-      <th>
-        Manufacturing Date
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of productList">
-      <td>
-        {{product.id}}
-      </td>
-      <td>
-        {{product.name}}
-      </td>
-      <td>
-        {{product.price}}
-      </td>
-      <td>
-        {{product.mfd}}
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 
 <div [ngSwitch]="userRole">
@@ -65,3 +31,6 @@
     This is default view.
   </div>
 </div>
+
+<app-product-list [products]="productList" (message)="receiveFromChild($event)"></app-product-list>
+{{messageFromChild}}

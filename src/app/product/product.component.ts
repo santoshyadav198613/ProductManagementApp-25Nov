@@ -14,7 +14,8 @@ export class ProductComponent implements OnInit {
     { id: 2, name: '1.5 ton AC', price: 64000, mfd: new Date('31-Dec-2012') },
     { id: 3, name: 'Refigerator', price: 94000, mfd: new Date('31-Dec-2011') }
   ];
-  userRole: string ='Super Admin';
+  messageFromChild: string;
+  userRole: string = 'Super Admin';
   constructor() { }
 
   ngOnInit() {
@@ -22,5 +23,9 @@ export class ProductComponent implements OnInit {
 
   toggle() {
     this.isVisible = !this.isVisible;
+  }
+
+  receiveFromChild(message: string) {
+    this.messageFromChild = message;
   }
 }
