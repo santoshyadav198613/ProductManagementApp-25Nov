@@ -46,7 +46,7 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit {
 
   addProduct() {
     this.productService.addProduct();
-    this.productList = this.productService.getProducts();
+    // this.productList = this.productService.getProducts();
   }
 
   ngAfterViewInit(): void {
