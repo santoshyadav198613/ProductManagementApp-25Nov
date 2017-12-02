@@ -20,6 +20,7 @@
 <button type="button" (click)="toggle()">Toggle</button>
 
 <app-product-list [products]="productList" (message)="receiveFromChild($event)"></app-product-list>
+<button (click)="addProduct()" class="btn btn-primary">Add product</button>
 
 
 <div [ngSwitch]="userRole">
@@ -42,4 +43,5 @@
 <app-product-details></app-product-details>
 <app-product-details></app-product-details>
 <app-product-details></app-product-details>
+
 
