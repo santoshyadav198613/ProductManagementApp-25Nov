@@ -13,6 +13,11 @@
 
 </div>
 
+
+<div #maindiv>
+
+</div>
+
 <button type="button" (click)="toggle()">Toggle</button>
 
 
@@ -34,3 +39,5 @@
 
 <app-product-list [products]="productList" (message)="receiveFromChild($event)"></app-product-list>
 {{messageFromChild}}
+
+<app-product-details></app-product-details>

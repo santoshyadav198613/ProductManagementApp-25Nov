@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild ,ElementRef } from '@angular/core';
 import { Product } from './product';
-
+import { ProductDetailsComponent } from './product-details/product-details.component';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -15,6 +15,9 @@ export class ProductComponent implements OnInit {
     { id: 3, name: 'Refigerator', price: 94000, mfd: new Date('31-Dec-2011') }
   ];
   messageFromChild: string;
+  @ViewChild(ProductDetailsComponent) prodDetailsComponent: ProductDetailsComponent;
+
+  @ViewChild('maindiv') div: ElementRef;
   userRole: string = 'Super Admin';
   constructor() { }
 
@@ -22,6 +25,9 @@ export class ProductComponent implements OnInit {
   }
 
   toggle() {
+    this.div.nativeElement.innerText = 'This data is assigned from ViewChild';
+    this.prodDetailsComponent.productName = 'LED TV';
+    this.prodDetailsComponent.sendAlert();
     this.isVisible = !this.isVisible;
   }
 
