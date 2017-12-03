@@ -1,0 +1,62 @@
+<h1>
+  Customer Form
+</h1>
+
+{{customerForm.value | json}}
+
+<form [formGroup]="customerForm" novalidate (submit)="saveCustomer()">
+  <div class="form-group">
+    <input class="form-control" type="number" name="custid" formControlName="id" placeholder="Customer Id">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="custname" formControlName="name" placeholder="Customer Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="custemail" formControlName="email" placeholder="Customer Email">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="date" name="custdob" formControlName="dob" placeholder="Customer DOB">
+  </div>
+  <div formGroupName="address">
+    <div class="form-group">
+      <input class="form-control" type="text" name="custaddr1" formControlName="addressLine1" placeholder="Customer AddressLine1">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" name="custaddr2" formControlName="addressLine2" placeholder="Customer AddressLine2">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" name="custcity" formControlName="city" placeholder="Customer City">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" name="custstate" formControlName="state" placeholder="Customer State">
+    </div>
+  </div>
+  <div>
+    <button type="button" (click)="addCard()" class="btn btn-success">Add Card</button>
+  </div>
+  <div formArrayName="cards">
+      <div *ngFor="let card of customerForm['controls'].cards['controls'];let i=index">
+            <div [formGroupName]="i">
+                <div class="form-group">
+                    <input class="form-control" type="number" name="cardnumber" formControlName="cardNumber" placeholder="Card Number">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" type="number" name="expmonth" formControlName="expiryMonth" placeholder="Expiry Month">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" type="number" name="expyear" formControlName="expiryYear" placeholder="Expiry Year">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" type="number" name="cvv" formControlName="cvv" placeholder="CVV">
+                  </div>
+                  <div>
+                    <button class="btn btn-danger" (click)="remmoveCard(i)">Remove Card</button>
+                  </div>
+            </div>
+      </div>
+  </div>
+
+  <div>
+    <button [disabled]="customerForm.invalid" type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>

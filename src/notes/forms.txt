@@ -27,3 +27,16 @@ Validations:
 
 pristine -- This is fresh form.
 dirty -- as soon as user enters any value.
+
+criteria for selecting template drive forms:
+1. Simple forms
+2. More control on html.
+
+Reactive Forms:
+Steps:
+1. import { ReactiveFormsModule } from '@angular/forms';
+2. add ReactiveFormsModule to import array.
+
+Classes: FormGroup,FormBuilder, FormControl
+
+HTML directives: formGroup, formControlName
