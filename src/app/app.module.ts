@@ -8,6 +8,7 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 
 import { ProductService } from './service/product/product.service';
+import { ProductnewService } from './service/product/productnew.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { ProductService } from './service/product/product.service';
   imports: [
     BrowserModule
   ],
-  providers: [ { provide : ProductService , useClass: ProductService } ],
+  providers: [ { provide : ProductService , useClass: ProductnewService } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

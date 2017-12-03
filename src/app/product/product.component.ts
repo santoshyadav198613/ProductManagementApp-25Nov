@@ -10,8 +10,8 @@ import { ProductService } from '../service/product/product.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css'],
-  providers: [ProductService]
+  styleUrls: ['./product.component.css']
+  // providers: [ProductService]
 })
 export class ProductComponent implements OnInit, DoCheck, AfterViewInit {
   productName: string = '32inch LED TV';
