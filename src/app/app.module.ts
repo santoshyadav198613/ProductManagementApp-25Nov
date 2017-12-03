@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
@@ -9,18 +9,23 @@ import { ProductDetailsComponent } from './product/product-details/product-detai
 
 import { ProductService } from './service/product/product.service';
 import { ProductnewService } from './service/product/productnew.service';
+import { CategoriesComponent } from './categories/categories.component';
+
+import { CategoriesService } from './service/categories/categories.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CategoriesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [ { provide : ProductService , useClass: ProductnewService } ],
+  providers: [{ provide: ProductService, useClass: ProductnewService }, CategoriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

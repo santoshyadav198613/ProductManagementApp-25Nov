@@ -1,0 +1,29 @@
+Why:
+1. To get or collect information from user.
+
+Two-way data binding:
+1. The changes to the model wll be in sync with controller and view.
+
+Types:
+1. Template Driven forms
+2. Reactive Forms
+
+How:
+1. Template driven forms
+
+Steps:
+a. import { FormsModule } from '@angular/forms';
+b. Add FormsModule into imports array. 
+c. [(ngModel)] -- use banana in the box syntax for ngModel.
+
+Validations:
+1. required 
+2. maxLength
+3. minLength
+4. min  -- will not work
+5. max -- will not work
+6. email -- will not work
+7. pattern -- regex
+
+pristine -- This is fresh form.
+dirty -- as soon as user enters any value.

@@ -13,7 +13,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   sendAlert() {
-    alert('This is product details function');
+    // alert('This is product details function');
   }
 
 }

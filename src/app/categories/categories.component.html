@@ -1,0 +1,33 @@
+<h1>
+  Categories Form
+</h1>
+{{categories|json}}
+{{catForm.invalid | json }}
+{{catForm.valid | json }}
+{{catForm.pristine | json }}
+{{catForm.dirty | json }}
+{{catForm.value | json }}
+<form class="col-md-6" #catForm="ngForm" (submit)="save(catForm)">
+  <div class="form-group">
+    <input required class="form-control" [(ngModel)]="categories.id" #catid="ngModel" type="number" name="id" placeholder="ID">
+    {{catid.valid}}
+    {{catid.invalid}}
+    {{catid.pristine}}
+    {{catid.dirty}}
+    {{catid.touched}}
+    {{catid.errors | json}}
+    <div class="alert alert-danger" [hidden]="catid.valid || catid.pristine">
+      Category Id is required
+    </div>
+  </div>
+  <div class="form-group">
+    <input #catname="ngModel" required minlength="3" maxlength="8" class="form-control" [(ngModel)]="categories.name" type="text" name="name" placeholder="Name">
+    {{catname.errors | json}}
+  </div>
+  <div class="form-group">
+    <input required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" class="form-control" [(ngModel)]="categories.description" type="text" name="desc" placeholder="Description">
+  </div>
+  <div>
+    <button [disabled]="catForm.invalid" type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>
