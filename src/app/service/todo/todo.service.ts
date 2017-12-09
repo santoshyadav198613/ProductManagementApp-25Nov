@@ -11,7 +11,7 @@ export class TodoService {
 
   getTodoList() {
     return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos',
-      { headers: new HttpHeaders().set('token', 'ggfgh45345ghjgfds').set('newtoken','dsfkdsfhkj4535kjhjh') });
+      { headers: new HttpHeaders().set('token', 'ggfgh45345ghjgfds').set('newtoken', 'dsfkdsfhkj4535kjhjh') });
   }
 
   addTodo(todo: Todo) {

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule , ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
@@ -18,6 +18,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { appConfig, APPVALUES } from './service/valueProvider/app.config';
 import { TodoComponent } from './todo/todo.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
+
+import { ApiInterceptor } from './interceptor/http-interceptor';
 
 @NgModule({
   declarations: [
@@ -36,9 +38,10 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [{ provide: ProductService, useClass: ProductnewService }, 
+  providers: [{ provide: ProductService, useClass: ProductnewService },
     CategoriesService,
-  { provide: appConfig, useValue: APPVALUES  }],
+  { provide: appConfig, useValue: APPVALUES },
+  { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
