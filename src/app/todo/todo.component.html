@@ -1,6 +1,25 @@
-<p>
-  todo works!
-</p>
+<h1>
+  Todo Form
+</h1>
 
+<div class="row">
+    <form #todoForm="ngForm" (submit)="save();todoForm.reset()" class="col-md-6">
+        <div class="form-group">
+          <input required class="form-control" type="number" [(ngModel)]="todo.userId" placeholder="User Id" name="userid">
+        </div>
+        <div class="form-group">
+          <input required class="form-control" type="text" [(ngModel)]="todo.title" placeholder="Title" name="title">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="checkbox" [(ngModel)]="todo.completed" placeholder="Completed" name="Completed">
+        </div>
+        <div>
+          <button [disabled]="todoForm.invalid" type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form> 
+</div>
 
-<app-todo-list></app-todo-list>
+<div class="row">
+    <app-todo-list></app-todo-list>
+</div>
+
