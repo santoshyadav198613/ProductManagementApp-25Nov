@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
@@ -36,7 +37,14 @@ import { ApiInterceptor } from './interceptor/http-interceptor';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'product', component: ProductComponent },
+      { path: 'categories', component: CategoriesComponent },
+      { path: 'customer', component: CustomerComponent },
+      { path: 'todo', component: TodoComponent },
+      { path: '', redirectTo: 'product' , pathMatch : 'full' },
+    ])
   ],
   providers: [{ provide: ProductService, useClass: ProductnewService },
     CategoriesService,

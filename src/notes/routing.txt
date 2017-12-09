@@ -1,0 +1,17 @@
+What:
+
+It will provide navigation to different parts on app.
+Also we can pass data in url, we can read the same.
+we can restrict the access to urls.
+we can also use routing to pre-load the data.*
+we can achieve SPA.
+
+How:
+1. import RouterModule and register the same.
+2. <router-outlet></router-outlet> -- the components gets loaded after this tag.
+
+
+Angular Modules:
+Guards:
+Factory:
+
