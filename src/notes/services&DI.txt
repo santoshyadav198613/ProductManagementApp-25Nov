@@ -26,5 +26,5 @@ Types of services:
 Class based service:
 
 Non-Class based service:
-1. Value Provider
+1. Value Provider -- 
 3. Factory -- To be discussed during routing

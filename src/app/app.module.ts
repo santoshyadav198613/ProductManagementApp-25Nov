@@ -14,6 +14,8 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesService } from './service/categories/categories.service';
 import { CustomerComponent } from './customer/customer.component';
 
+import { appConfig, APPVALUES } from './service/valueProvider/app.config';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { CustomerComponent } from './customer/customer.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [{ provide: ProductService, useClass: ProductnewService }, CategoriesService],
+  providers: [{ provide: ProductService, useClass: ProductnewService }, 
+    CategoriesService,
+  { provide: appConfig, useValue: APPVALUES  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
