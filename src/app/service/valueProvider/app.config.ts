@@ -9,4 +9,4 @@ export const APPVALUES: IValueProvide = {
     pageOptions: [10, 20, 30],
     pageSize: 20,
     color: Color.red,
-}
+};

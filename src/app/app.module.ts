@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
@@ -15,6 +16,8 @@ import { CategoriesService } from './service/categories/categories.service';
 import { CustomerComponent } from './customer/customer.component';
 
 import { appConfig, APPVALUES } from './service/valueProvider/app.config';
+import { TodoComponent } from './todo/todo.component';
+import { TodoListComponent } from './todo/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,15 @@ import { appConfig, APPVALUES } from './service/valueProvider/app.config';
     ProductListComponent,
     ProductDetailsComponent,
     CategoriesComponent,
-    CustomerComponent
+    CustomerComponent,
+    TodoComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [{ provide: ProductService, useClass: ProductnewService }, 
     CategoriesService,

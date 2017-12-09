@@ -1,0 +1,23 @@
+1. what is http:
+It is a special service to communicate with restful apis.
+
+dummy api: https://jsonplaceholder.typicode.com/todos
+
+how:
+1. import { HttpClientModule } from '@angular/common/http'; and  register the package.
+
+
+Observable:
+rxjs:  it provides the observable.
+
+Streams:
+They provide data in streams.
+
+Different functions:
+
+Pub-Sub design pattern:
+
+
+Promises: 
+1. It will return either success or failure.
+2. They will return entire data in one go.
