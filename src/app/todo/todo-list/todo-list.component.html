@@ -11,10 +11,11 @@
       <th>UserId</th>
       <th>Title</th>
       <th>Completed</th>
+      <th>Details</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let todo of todoList">
+    <tr [routerLink]="[todo.id]" *ngFor="let todo of todoList">
       <td>
           {{todo.id}}
       </td>
@@ -28,6 +29,9 @@
 
       <td>
           {{todo.completed}}
+      </td>
+      <td>
+        <button class="btn btn-success" [routerLink]="[todo.id]">Details</button>
       </td>
 
     </tr>

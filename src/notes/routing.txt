@@ -12,6 +12,31 @@ How:
 
 
 Angular Modules:
-Guards:
-Factory:
 
+ng g module <module_name>
+
+1. Routing Module : We will add all routing config into this module.
+2. Feature Module: Clubbing all things related to a Feature together.
+3. Shared Module:  we can add all common modules like forms, http or any third party module here
+
+Guards: Guards will be used to restrict the access to URLs
+ng g guard <guard_name>
+types:
+canActivate:
+canActivateChild:
+canDeActivate:
+canDeActivateChild:
+Resolve: - prefetch the data, to be used for master data.
+
+Factory: 
+
+pipes /Custom pipes
+custom directives:
+webpack
+UT
+Angular material:
+
+Dynamic Routes:
+
+we can create url like 'todo/:id' where id is the key.
+to read the values use ActivatedRoute service

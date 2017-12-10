@@ -6,6 +6,8 @@ import { TodoService } from '../../service/todo/todo.service';
 
 import { Todo } from '../../service/todo/todo';
 
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -13,13 +15,17 @@ import { Todo } from '../../service/todo/todo';
 })
 export class TodoListComponent implements OnInit {
   todoList: Todo[];
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.todoService.getTodoList().subscribe(
-      (data) => { this.todoList = data; },
-      (err) => console.log(err)
+    this.route.data.subscribe(
+      (data) => this.todoList =data['todoList']
     );
+    // this.todoService.getTodoList().subscribe(
+    //   (data) => { this.todoList = data; },
+    //   (err) => console.log(err)
+    // );
 
     this.todoService.getPhotos().subscribe(
       (event) => {

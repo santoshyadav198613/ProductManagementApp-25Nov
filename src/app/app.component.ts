@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { ProductService } from './service/product/product.service';
+import { LoginService } from './service/login/login.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +11,8 @@ import { ProductService } from './service/product/product.service';
 })
 export class AppComponent {
   title = 'app';
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService,
+    public loginService: LoginService) {
 
   }
 
