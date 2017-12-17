@@ -22,13 +22,13 @@ export class TodoListComponent implements OnInit {
     public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.route.data.subscribe(
-      (data) => this.todoList = data['todoList']
-    );
-    // this.todoService.getTodoList().subscribe(
-    //   (data) => { this.todoList = data; },
-    //   (err) => console.log(err)
+    // this.route.data.subscribe(
+    //   (data) => this.todoList = data['todoList']
     // );
+    this.todoService.getTodoList().subscribe(
+      (data) => { this.todoList = data; },
+      (err) => console.log(err)
+    );
 
     this.todoService.getPhotos().subscribe(
       (event) => {

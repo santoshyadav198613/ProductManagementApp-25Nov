@@ -32,9 +32,9 @@ Factory:
 
 pipes /Custom pipes - Done
 custom directives: Done
-webpack
+webpack -- 
 UT
-Angular material:
+Angular material:Done
 
 Dynamic Routes: Done
 
@@ -48,3 +48,10 @@ steps:
 1. feature module should not be part of any other module.
 2. Nothing shouls be shared like component/service.
 3. add routing in routing module and add loadChildren property.
+
+
+
+webpack:
+1. provides a dev server.
+2. also gives bundling functionality.
+3. async module loader.
