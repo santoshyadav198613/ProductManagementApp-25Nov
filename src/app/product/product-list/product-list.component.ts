@@ -12,6 +12,7 @@ import { Product } from '../../service/product/product';
 export class ProductListComponent implements OnInit, OnChanges, OnDestroy {
   @Input() products: Product[];
   @Output() message: EventEmitter<string> = new EventEmitter<string>();
+  price: number = 0;
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {

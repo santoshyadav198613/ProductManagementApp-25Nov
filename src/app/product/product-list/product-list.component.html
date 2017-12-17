@@ -1,6 +1,8 @@
 <h1>
   Product List
 </h1>
+{{price}}
+<input type="number" class="form-control" name="price" [(ngModel)]="price" placeholder="Price">
 
 <table class="table">
   <thead>
@@ -20,18 +22,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | productFilter : price">
       <td>
-        {{product.id}}
+        {{product.id | percent}}
       </td>
       <td>
-        {{product.name}}
+        {{product.name | uppercase }}
       </td>
       <td>
-        {{product.price}}
+        {{product.price | currency :'INR' }}
       </td>
       <td>
-        {{product.mfd}}
+        {{product.mfd | date : 'dd-MMM-yyyy' }}
       </td>
     </tr>
   </tbody>

@@ -32,6 +32,7 @@ import { LoginComponent } from './login/login.component';
 
 import { LoginService } from './service/login/login.service';
 import { AuthGuard } from './service/guard/auth.guard';
+// import { ProductFilterPipe } from './custom/product-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,8 @@ import { AuthGuard } from './service/guard/auth.guard';
     // TodoListComponent,
     PagenotfoundComponent,
     LoginComponent
+    //,
+    // ProductFilterPipe
   ],
   imports: [
     BrowserModule,

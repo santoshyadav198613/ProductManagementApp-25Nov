@@ -1,0 +1,10 @@
+Pipes:
+Pipes will transform our data, but original data is not changed.
+
+built-in pipes:
+1. lowercase
+2. uppercase
+3. date
+4. currency
+5. percent
+6. json
