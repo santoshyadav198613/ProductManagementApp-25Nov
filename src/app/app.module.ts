@@ -32,6 +32,8 @@ import { LoginComponent } from './login/login.component';
 
 import { LoginService } from './service/login/login.service';
 import { AuthGuard } from './service/guard/auth.guard';
+import { HoverDirective } from './directives/hover.directive';
+import { PasswordVaidatorDirective } from './directives/password-vaidator.directive';
 // import { ProductFilterPipe } from './custom/product-filter.pipe';
 
 @NgModule({
@@ -45,7 +47,9 @@ import { AuthGuard } from './service/guard/auth.guard';
     // TodoComponent,
     // TodoListComponent,
     PagenotfoundComponent,
-    LoginComponent
+    LoginComponent,
+    HoverDirective,
+    PasswordVaidatorDirective
     //,
     // ProductFilterPipe
   ],
