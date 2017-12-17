@@ -7,7 +7,9 @@ import { Todo } from './todo';
 @Injectable()
 export class TodoService {
 
-  constructor(private http: HttpClient) { }
+  constructor(isAdmin: boolean, private http: HttpClient) { 
+    console.log(isAdmin);
+  }
 
   getTodoList() {
     return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos',

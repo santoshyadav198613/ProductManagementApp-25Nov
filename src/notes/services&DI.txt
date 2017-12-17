@@ -27,4 +27,4 @@ Class based service:
 
 Non-Class based service:
 1. Value Provider -- we can use constants as a service.
-3. Factory -- To be discussed during routing
+3. Factory --  

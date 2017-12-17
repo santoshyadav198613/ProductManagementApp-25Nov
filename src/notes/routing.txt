@@ -28,7 +28,7 @@ canDeActivate:
 canDeActivateChild:
 Resolve: - prefetch the data, to be used for master data.
 
-Factory: 
+Factory: --
 
 pipes /Custom pipes
 custom directives:
@@ -47,4 +47,4 @@ should be implemented for least used module.
 steps:
 1. feature module should not be part of any other module.
 2. Nothing shouls be shared like component/service.
-3. 
+3. add routing in routing module and add loadChildren property.
