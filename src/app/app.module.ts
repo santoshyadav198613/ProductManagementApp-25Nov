@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 // import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {  HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { RouterModule } from '@angular/router';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RoutingModule } from './routing/routing.module';
 import { ProductModule } from './product/product.module';
 import { SharedModule } from './shared/shared.module';
@@ -34,6 +34,7 @@ import { LoginService } from './service/login/login.service';
 import { AuthGuard } from './service/guard/auth.guard';
 import { HoverDirective } from './directives/hover.directive';
 import { PasswordVaidatorDirective } from './directives/password-vaidator.directive';
+import { NavbarComponent } from './navbar/navbar.component';
 // import { ProductFilterPipe } from './custom/product-filter.pipe';
 
 @NgModule({
@@ -55,6 +56,7 @@ import { PasswordVaidatorDirective } from './directives/password-vaidator.direct
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     // FormsModule,
     // ReactiveFormsModule,
     // HttpClientModule,

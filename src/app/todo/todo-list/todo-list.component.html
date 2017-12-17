@@ -12,10 +12,13 @@
       <th>Title</th>
       <th>Completed</th>
       <th>Details</th>
+      <th>
+        Edit
+      </th>
     </tr>
   </thead>
   <tbody>
-    <tr [routerLink]="[todo.id]" *ngFor="let todo of todoList">
+    <tr  *ngFor="let todo of todoList">
       <td>
           {{todo.id}}
       </td>
@@ -32,6 +35,9 @@
       </td>
       <td>
         <button class="btn btn-success" [routerLink]="[todo.id]">Details</button>
+      </td>
+      <td>
+        <button  mat-raised-button color="primary" (click)="edit(todo)">Edit</button>
       </td>
 
     </tr>

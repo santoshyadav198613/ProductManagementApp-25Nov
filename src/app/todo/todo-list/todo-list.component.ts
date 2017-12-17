@@ -7,6 +7,8 @@ import { TodoService } from '../../service/todo/todo.service';
 import { Todo } from '../../service/todo/todo';
 
 import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { TodoEditComponent } from '../todo-edit/todo-edit.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -16,11 +18,12 @@ import { ActivatedRoute } from '@angular/router';
 export class TodoListComponent implements OnInit {
   todoList: Todo[];
   constructor(private todoService: TodoService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    public dialog: MatDialog) { }
 
   ngOnInit() {
     this.route.data.subscribe(
-      (data) => this.todoList =data['todoList']
+      (data) => this.todoList = data['todoList']
     );
     // this.todoService.getTodoList().subscribe(
     //   (data) => { this.todoList = data; },
@@ -39,6 +42,17 @@ export class TodoListComponent implements OnInit {
       },
       (err) => console.log(err)
     );
+  }
+
+  edit(todo: Todo) {
+    let dialogRef = this.dialog.open(TodoEditComponent, {
+      data: todo
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
   }
 
 }

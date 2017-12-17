@@ -15,6 +15,7 @@ import { TodoResolveGuard } from '../service/todo/todo-resolve.guard';
 import { TodoService } from '../service/todo/todo.service';
 
 import { todoFactory } from '../service/todo/todo-factory';
+import { TodoEditComponent } from './todo-edit/todo-edit.component';
 
 @NgModule({
   imports: [
@@ -38,8 +39,10 @@ import { todoFactory } from '../service/todo/todo-factory';
   declarations: [
     TodoComponent,
     TodoListComponent,
-    TodoDetailsComponent
+    TodoDetailsComponent,
+    TodoEditComponent
   ],
+  entryComponents : [TodoEditComponent],
   providers: [todoFactory, TodoResolveGuard]
   // exports: [FormsModule]
 })

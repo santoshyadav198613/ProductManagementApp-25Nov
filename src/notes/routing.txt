@@ -28,15 +28,15 @@ canDeActivate:
 canDeActivateChild:
 Resolve: - prefetch the data, to be used for master data.
 
-Factory: --
+Factory: 
 
-pipes /Custom pipes
-custom directives:
+pipes /Custom pipes - Done
+custom directives: Done
 webpack
 UT
 Angular material:
 
-Dynamic Routes:
+Dynamic Routes: Done
 
 we can create url like 'todo/:id' where id is the key.
 to read the values use ActivatedRoute service
