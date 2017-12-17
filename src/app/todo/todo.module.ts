@@ -20,7 +20,7 @@ import { TodoService } from '../service/todo/todo.service';
     SharedModule,
     RouterModule.forChild([
       {
-        path: 'todo', component: TodoComponent, canActivate: [AuthGuard],
+        path: '', component: TodoComponent, canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
         resolve: {
           todoList: TodoResolveGuard

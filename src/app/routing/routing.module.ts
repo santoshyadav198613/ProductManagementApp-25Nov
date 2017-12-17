@@ -16,9 +16,9 @@ import { AuthGuard } from '../service/guard/auth.guard';
     CommonModule,
     RouterModule.forRoot([
       { path: 'product', component: ProductComponent, canActivate: [AuthGuard] },
-      { path: 'categories', component: CategoriesComponent , canActivate: [AuthGuard] },
-      { path: 'customer', component: CustomerComponent ,canActivate: [AuthGuard] },
-      // { path: 'todo', component: TodoComponent },
+      { path: 'categories', component: CategoriesComponent, canActivate: [AuthGuard] },
+      { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
+      { path: 'todo', loadChildren: '../todo/todo.module#TodoModule' },
       { path: 'login', component: LoginComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', component: PagenotfoundComponent }

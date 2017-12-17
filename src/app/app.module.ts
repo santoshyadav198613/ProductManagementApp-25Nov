@@ -8,7 +8,7 @@ import {  HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RoutingModule } from './routing/routing.module';
 import { ProductModule } from './product/product.module';
 import { SharedModule } from './shared/shared.module';
-import { TodoModule } from './todo/todo.module';
+// import { TodoModule } from './todo/todo.module';
 
 import { AppComponent } from './app.component';
 // import { ProductComponent } from './product/product.component';
@@ -53,7 +53,7 @@ import { AuthGuard } from './service/guard/auth.guard';
     // HttpClientModule,
     SharedModule,
     ProductModule,
-    TodoModule,
+    // TodoModule,
     RoutingModule
     // ,
     // RouterModule.forRoot([
