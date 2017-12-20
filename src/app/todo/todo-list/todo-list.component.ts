@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Host, SkipSelf } from '@angular/core';
 
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 
@@ -13,11 +13,13 @@ import { TodoEditComponent } from '../todo-edit/todo-edit.component';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.css'],
+  encapsulation: ViewEncapsulation.None
+  // providers : [TodoService]
 })
 export class TodoListComponent implements OnInit {
   todoList: Todo[];
-  constructor(private todoService: TodoService,
+  constructor( @SkipSelf() private todoService: TodoService,
     private route: ActivatedRoute,
     public dialog: MatDialog) { }
 

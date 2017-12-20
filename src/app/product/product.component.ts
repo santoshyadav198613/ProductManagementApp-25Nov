@@ -25,6 +25,10 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit {
 
   @ViewChildren(ProductDetailsComponent) prodChildrenComp: QueryList<ProductDetailsComponent>;
   userRole: string = 'Super Admin';
+  values=  [
+    { key: 1, Value: 'true' },
+    { key: 2, Value: 'False' }
+  ];
   constructor(private productService: ProductService) { }
 
   ngOnInit() {

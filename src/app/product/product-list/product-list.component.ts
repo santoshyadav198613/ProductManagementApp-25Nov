@@ -1,13 +1,14 @@
 import {
   Component, OnInit, Input, Output,
-  EventEmitter, OnChanges, SimpleChanges, OnDestroy
+  EventEmitter, OnChanges, SimpleChanges, OnDestroy , ViewEncapsulation
 } from '@angular/core';
 import { Product } from '../../service/product/product';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
+  encapsulation : ViewEncapsulation.Native
 })
 export class ProductListComponent implements OnInit, OnChanges, OnDestroy {
   @Input() products: Product[];
